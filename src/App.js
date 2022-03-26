@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import './App.css'
 
-function App() {
+import AnimationBox from "./components/animation-box";
+
+const FlexContainer = styled.div`
+  display: flex;
+  /* height: 100vh; */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px;
+`
+
+const App = () => {
+  const handleClick = (e) => {
+    // e.target.style.animationPlayState = 'paused'
+
+    let state = e.target.style.animationPlayState;
+    if(state === 'paused') {
+      e.target.style.animationPlayState = ''
+    } else {
+      e.target.style.animationPlayState = 'paused'
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <FlexContainer>
+      {(new Array(100).fill(0)).map((item, index) => 
+        <AnimationBox onClick={handleClick} key={index}>{index + 1}</AnimationBox>
+      )}
+
+    </FlexContainer>
+  )
 }
 
 export default App;
