@@ -15,13 +15,15 @@ const AnimationBox = styled.div`
 
   border-radius: 50px;
   background-color: salmon;
+
   animation-name: box_ani;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  /* animation-fill-mode: forwards; */
   /* animation-direction: alternate; */
   /* animation-delay: 2s; */
-  animation-timing-function: linear;
-  /* animation-fill-mode: forwards; */
 
   @keyframes box_ani {
     from {

@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import './App.css'
+import Windmill from "./components/windmill";
 
-import AnimationBox from "./components/animation-box";
 
-const FlexContainer = styled.div`
-  display: flex;
-  /* height: 100vh; */
+const Container = styled.div`
+  margin-top: 250px;
+  /* display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 25px;
+  padding: 25px; */
 `
 
 const App = () => {
@@ -26,12 +26,9 @@ const App = () => {
   }
 
   return (
-    <FlexContainer>
-      {(new Array(100).fill(0)).map((item, index) => 
-        <AnimationBox onClick={handleClick} key={index}>{index + 1}</AnimationBox>
-      )}
-
-    </FlexContainer>
+    <Container>
+      <Windmill/>
+    </Container>
   )
 }
 
