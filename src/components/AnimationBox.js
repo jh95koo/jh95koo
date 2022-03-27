@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const AnimationBox = styled.div`
+const AnimationBox = styled.div `
   width: 100px;
   height: 100px;
   margin: 28px;
@@ -27,9 +27,9 @@ const AnimationBox = styled.div`
 
   @keyframes box_ani {
     from {
-        /* margin: 100px; */
-        /* width: 50px;
-        height: 50px; */
+      /* margin: 100px; */
+      /* width: 50px;
+      height: 50px; */
     }
     to {
         /* margin: 300px; */

@@ -1,34 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import Windmill from "./components/windmill";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { Main, Editor, Windmill, Roller } from './pages';
+import Nav from "./components/Nav";
 
-const Container = styled.div`
-  margin-top: 250px;
-  /* display: flex;
+const Container = styled.div `
   height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 25px; */
+  padding-left:  14px;
+  padding-right: 14px;
+  display: flex;
+  flex-direction: column;
+`
+const NavBox = styled.div `
+  z-index: 100;
+`
+const Content = styled.div `
+  flex: 1;
 `
 
 const App = () => {
-  const handleClick = (e) => {
-    // e.target.style.animationPlayState = 'paused'
-
-    let state = e.target.style.animationPlayState;
-    if(state === 'paused') {
-      e.target.style.animationPlayState = ''
-    } else {
-      e.target.style.animationPlayState = 'paused'
-    }
-  }
+  // const history = useHistory();
 
   return (
-    <Container>
-      <Windmill/>
-    </Container>
+    <BrowserRouter>
+      <Container>
+        <NavBox>
+          <Nav/>
+        </NavBox>
+        <Content>
+          <Routes>
+            <Route exact path="/"         element={<Main/>}/>
+            <Route exact path="/editor"   element={<Editor/>}/>
+            <Route exact path="/editor"   element={<Editor/>}/>
+            <Route exact path="/windmill" element={<Windmill/>}/>
+            <Route exact path="/roller"   element={<Roller/>}/>
+          </Routes>
+        </Content>
+      </Container>
+    </BrowserRouter>
   )
 }
 
