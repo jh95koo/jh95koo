@@ -1,25 +1,48 @@
 
-import React from "react";
-import { Link } from "react-router-dom";
-import Button from './Button'
+import React, { useEffect, useRef, useState } from "react";
+import styled from 'styled-components'
+import MenuImage from "./MenuImage";
+import LeftMenu from "./LeftMenu";
 
-function Nav() {
+const TopBar = styled.div`
+  height : 52px;
+  background-color: #3E0286;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+`
+const TitleText = styled.div `
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 12px;
+`
+
+
+const Nav = () => {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(open)
+    if(open) {
+
+    } else {
+
+    }
+  }, [open])
+
   return (
-    <div>
-      <Link to="/">
-        <Button>main</Button>
-      </Link>
-      <Link to="/editor">
-        <Button>editor</Button>
-      </Link>
-      <Link to="/roller">
-        <Button>roller</Button>
-      </Link>
-      <Link to="/windmill">
-        <Button>windmill</Button>
-      </Link>
-    </div>
+    <TopBar>
+      <LeftMenu open={open} setOpen={setOpen}/>
+      <MenuImage onClick={()=>{setOpen(true)}}/>
+      <TitleText>Hollo world</TitleText>
+    </TopBar>
   );
 }
+
+
+
+
+
 
 export default Nav;

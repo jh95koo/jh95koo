@@ -7,16 +7,17 @@ import Nav from "./components/Nav";
 
 const Container = styled.div `
   height: 100vh;
-  padding-left:  14px;
-  padding-right: 14px;
   display: flex;
   flex-direction: column;
 `
 const NavBox = styled.div `
   z-index: 100;
+  margin-bottom: 10px;
 `
 const Content = styled.div `
   flex: 1;
+  padding-left:  14px;
+  padding-right: 14px;
 `
 
 const App = () => {
