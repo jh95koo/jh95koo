@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Main, Editor, Windmill, Roller } from './pages';
+import TabNav from "./pages/TabNav";
+
 import Nav from "./components/Nav";
 
 const Container = styled.div `
@@ -36,6 +38,8 @@ const App = () => {
             <Route exact path="/editor"   element={<Editor/>}/>
             <Route exact path="/windmill" element={<Windmill/>}/>
             <Route exact path="/roller"   element={<Roller/>}/>
+            <Route exact path="/tab-nav"  element={<TabNav/>}/>
+            <Route path="*" element={<h3>404</h3>}/>
           </Routes>
         </Content>
       </Container>

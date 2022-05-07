@@ -79,6 +79,9 @@ const LeftMenu = (props) => {
         <Link to="/windmill">
           <MenuButton>windmill</MenuButton>
         </Link>
+        <Link to="/tab-nav">
+          <MenuButton>Tab nav</MenuButton>
+        </Link>
       </Box>
     </BackgroundBox>
   )
